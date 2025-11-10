@@ -17,22 +17,20 @@
   "ignoreDeps": [],
   "labels": ["dependencies"],
   "packageRules": [
-    // 1) Pinned deps: isolate (OK to use separate* here because there's no matchUpdateTypes)
     {
-      "description": "Isolate PRs for pinned deps (exact x.y.z)",
+      "description": "Group ^>=1 ranges for patch/minor",
       "matchManagers": ["npm", "pnpm", "yarn", "bun"],
-      "matchCurrentValue": "^\\d+\\.\\d+\\.\\d+([+-][0-9A-Za-z.-]+)?$",
-      "groupName": null,
-      "separateMinorPatch": true,
-      "separateMajorMinor": true
+      "matchCurrentValue": "/(^[~^]|[<>=| -])/",
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "all non-major dependencies"
     },
-    // 2) Non-pinned deps: Patch versions, grouped together
     {
-      "description": "Group patch versions together for non-pinned deps",
+      "description": "Do not group pinned / ~ / ^0.x",
       "matchManagers": ["npm", "pnpm", "yarn", "bun"],
-      "matchCurrentValue": "/(^[~^]|[<>=| -])/", // anything that looks like a range
-      "groupName": "patch dependencies",
-      "matchUpdateTypes": ["patch"]
+      "matchCurrentValue": "^(?:\\d+\\.\\d+\\.\\d+(?:[+-][0-9A-Za-z.-]+)?|~.*|\\^0\\.\\d+(?:\\.\\d+)?(?:[+-][0-9A-Za-z.-]+)?)$",
+      "groupName": null,
+      "separateMajorMinor": true,
+      "separateMinorPatch": true
     }
   ],
   "postUpdateOptions": ["yarnDedupeHighest"],
@@ -42,6 +40,5 @@
   "rebaseWhen": "conflicted",
   "schedule": "on sunday before 6:00am",
   "separateMajorMinor": true,
-  "separateMultipleMajor": true,
   "timezone": "UTC"
 }
