@@ -44,7 +44,7 @@
     {
       "description": "Group ^>=1 ranges for patch/minor",
       "matchManagers": ["npm", "pnpm", "yarn", "bun"],
-      "matchCurrentValue": "^\\^[1-9]+[0-9]*(\\.\\d+){0,2}([+-][0-9A-Za-z.-]+)?$",
+      "matchCurrentValue": "/^\\^[1-9]+[0-9]*(\\.\\d+){0,2}([+-][0-9A-Za-z.-]+)?$/",
       "matchUpdateTypes": ["minor", "patch"],
       "groupName": "all non-major dependencies",
       "groupSlug": "all-non-major-dependencies"
