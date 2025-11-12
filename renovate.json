@@ -17,30 +17,32 @@
   "ignoreDeps": [],
   "labels": ["dependencies"],
   "packageRules": [
-    // {
-    //   "description": "Isolate PRs for experimental caret ranges (^0.x)",
-    //   "matchManagers": ["npm", "pnpm", "yarn", "bun"],
-    //   "matchCurrentValue": "^\\^0\\.\\d+(\\.\\d+)?([+-][0-9A-Za-z.-]+)?$",
-    //   "groupName": null,sa
-    //   "separateMajorMinor": true,
-    //   "separateMinorPatch": true
-    // },
-    // {
-    //   "description": "Isolate PRs for tilde ranges",
-    //   "matchManagers": ["npm", "pnpm", "yarn", "bun"],
-    //   "matchCurrentValue": "^~.*$",
-    //   "groupName": null,
-    //   "separateMajorMinor": true,
-    //   "separateMinorPatch": true
-    // },
-    // {
-    //   "description": "Isolate PRs for pinned deps (exact x.y.z)",
-    //   "matchManagers": ["npm", "pnpm", "yarn", "bun"],
-    //   "matchCurrentValue": "^\\d+\\.\\d+\\.\\d+([+-][0-9A-Za-z.-]+)?$",
-    //   "groupName": null,
-    //   "separateMajorMinor": true,
-    //   "separateMinorPatch": true
-    // },
+    {
+      "description": "Un-group tilde ranges",
+      "matchManagers": ["npm", "pnpm", "yarn", "bun"],
+      "matchCurrentValue": "^~.*$",
+      "groupName": null,
+      "groupSlug": null,
+      "separateMajorMinor": true,
+      "separateMinorPatch": true
+    },
+    {
+      "description": "Un-group pinned deps (exact x.y.z)",
+      "matchManagers": ["npm", "pnpm", "yarn", "bun"],
+      "matchCurrentValue": "/^\\d+\\.\\d+\\.\\d+([+-][0-9A-Za-z.-]+)?$/",
+      "groupName": null,
+      "groupSlug": null,
+      "separateMajorMinor": true,
+      "separateMinorPatch": true
+    },
+    {
+      "description": "Un-group experimental caret ranges (^0.x)",
+      "matchManagers": ["npm", "pnpm", "yarn", "bun"],
+      "matchCurrentValue": "^\\^0\\.\\d+(\\.\\d+)?([+-][0-9A-Za-z.-]+)?$",
+      "groupName": null,
+      "separateMajorMinor": true,
+      "separateMinorPatch": true
+    },
     {
       "description": "Group ^>=1 ranges for patch/minor",
       "matchManagers": ["npm", "pnpm", "yarn", "bun"],
