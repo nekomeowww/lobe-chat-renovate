@@ -46,7 +46,8 @@
       "matchManagers": ["npm", "pnpm", "yarn", "bun"],
       "matchCurrentValue": "^\\^[1-9]+[0-9]*(\\.\\d+){0,2}([+-][0-9A-Za-z.-]+)?$",
       "matchUpdateTypes": ["minor", "patch"],
-      "groupName": "all non-major dependencies"
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-non-major-dependencies"
     }
   ],
   "postUpdateOptions": ["yarnDedupeHighest"],
