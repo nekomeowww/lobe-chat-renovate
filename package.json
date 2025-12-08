@@ -249,7 +249,7 @@
     "nodemailer": "^7.0.11",
     "numeral": "^2.0.6",
     "nuqs": "^2.8.1",
-    "officeparser": "5.1.1",
+    "officeparser": "5.2.2",
     "oidc-provider": "^9.5.2",
     "ollama": "^0.6.3",
     "openai": "^4.104.0",
