@@ -22,7 +22,7 @@
     "@lobechat/types": "workspace:*"
   },
   "devDependencies": {
-    "promptfoo": "^0.118.17",
+    "promptfoo": "^0.123.0",
     "tsx": "^4.20.6"
   }
 }
